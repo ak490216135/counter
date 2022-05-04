@@ -19,6 +19,7 @@
 		let contractAddress = "0xB470dE1B64DfF00aB7D1d80cd7e68E04A4EBeB58" // 合约地址
 		let contractText = ""
 		let abi = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]'
+		abi = JSON.parse(abi)
 		let byteCode = ""
 
 		let counterContract = new web3.eth.Contract(
