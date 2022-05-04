@@ -1,2 +1,20 @@
-index.html
-v1
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<body>
+	<script>
+		if (window.ethereum) {
+            // 请求用户授权
+            window.ethereum.enable(function(){
+                web3.eth.getAccounts((error, accounts) => {
+                    web3.eth.defaultAccount = accounts[0];
+                    console.log(accounts)
+                })
+            })
+        }
+	</script>
+</body>
+</html>
