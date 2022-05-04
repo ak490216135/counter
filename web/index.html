@@ -6,12 +6,12 @@
 </head>
 <body>
 	<p>
-		<span>count:</span>
-		<span id="countNum">0</span>
-		<button onclick="getCount()"></button>
+		index
 	</p>
 	<p>
-		index
+		<span>count:</span>
+		<span id="countNum">0</span>
+		<button onclick="getCount()">GET</button>
 	</p>
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -38,7 +38,7 @@
 				{},
 				(err, res) => {
 					console.log(res)
-					window.document.getElementById("countNum").innerText(res)
+					window.document.getElementById("countNum").innerText = res
 				}
 			)
 		}
