@@ -5,16 +5,14 @@
 	<title>index</title>
 </head>
 <body>
+	<p>
+		index
+	</p>
+
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script>
-		if (window.ethereum) {
-            // 请求用户授权
-            window.ethereum.enable(function(){
-                web3.eth.getAccounts((error, accounts) => {
-                    web3.eth.defaultAccount = accounts[0];
-                    console.log(accounts)
-                })
-            })
-        }
+		let Web3 = require('web3');
+		
 	</script>
 </body>
 </html>
