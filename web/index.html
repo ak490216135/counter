@@ -11,10 +11,30 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script>
-		var web3 = new Web3();
+		var web3 = new Web3()
 		let server = "http://127.0.0.1:7545"
 		web3.setProvider(server)
 
+		// 合约相关
+		let contractAddress = "0xB470dE1B64DfF00aB7D1d80cd7e68E04A4EBeB58" // 合约地址
+		let contractText = ""
+		let abi = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]'
+		let byteCode = ""
+
+		let counterContract = new web3.eth.Contract(
+			abi,
+			contractAddress
+		)
+
+		// 获取计数
+		function getCount(){
+			counterContract.methods.get().call(
+				{},
+				(err, res) => {
+					console.log(res)
+				}
+			)
+		}
 	</script>
 </body>
 </html>
