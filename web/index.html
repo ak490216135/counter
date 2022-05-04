@@ -6,6 +6,11 @@
 </head>
 <body>
 	<p>
+		<span>count:</span>
+		<span id="countNum">0</span>
+		<button onclick="getCount()"></button>
+	</p>
+	<p>
 		index
 	</p>
 
@@ -33,6 +38,7 @@
 				{},
 				(err, res) => {
 					console.log(res)
+					window.document.getElementById("countNum").innerText(res)
 				}
 			)
 		}
