@@ -15,6 +15,7 @@
 	</p>
 	<p>
 		<button onclick="addCount()">ADD</button>
+		<button onclick="addCount10()">ADD 10</button>
 	</p>
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -58,6 +59,19 @@
 				console.log(res)
 			})
 		}
+		// 添加计数 10
+		function addCount10(){
+			let options = {
+				from: account,
+				gasPrice: '20000000000',
+				gas: 6721975,
+				value : 0
+			}
+			counterContract.methods.add10().send(options).then((res)=>{
+				console.log(res)
+			})
+		}
+		
 	</script>
 </body>
 </html>
