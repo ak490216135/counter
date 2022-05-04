@@ -13,6 +13,9 @@
 		<span id="countNum">0</span>
 		<button onclick="getCount()">GET</button>
 	</p>
+	<p>
+		<button onclick="addCount()">ADD</button>
+	</p>
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script>
@@ -21,6 +24,7 @@
 		web3.setProvider(server)
 
 		// 合约相关
+		let account = "0x8CdcBcc8BaE8F0c79124349724748934Bc3e2553" // 账户
 		let contractAddress = "0xB470dE1B64DfF00aB7D1d80cd7e68E04A4EBeB58" // 合约地址
 		let contractText = ""
 		let abi = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"num","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]'
@@ -41,6 +45,18 @@
 					window.document.getElementById("countNum").innerText = res
 				}
 			)
+		}
+		// 添加计数
+		function addCount(){
+			let options = {
+				from: account,
+				gasPrice: '20000000000',
+				gas: 6721975,
+				value : 0
+			}
+			contract.methods.add().send(options).then((res)=>{
+				console.log(res)
+			})
 		}
 	</script>
 </body>
