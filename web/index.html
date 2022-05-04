@@ -11,8 +11,10 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script>
-		let Web3 = require('web3');
-		
+		var web3 = new Web3();
+		let server = "http://127.0.0.1:7545"
+		web3.setProvider(server)
+
 	</script>
 </body>
 </html>
